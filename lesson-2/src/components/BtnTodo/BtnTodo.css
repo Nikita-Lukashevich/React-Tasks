@@ -1,0 +1,15 @@
+.btnTodo{
+    display: flex;
+    justify-content: center;
+}
+
+.btnTodo button{
+    background-color: rgba(0, 0, 0, 0.7);
+    color: rgb(245, 245, 245);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btnTodo button:hover{
+    background-color: black;
+}

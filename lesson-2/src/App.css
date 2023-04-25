@@ -1,0 +1,51 @@
+#root {
+  width: 100%;
+}
+
+.inputChange{
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.inVal{
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+.inValue{
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.inValue input{
+  background-color: rgb(255, 228, 196);
+  margin-left: 20px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.inValue input::placeholder{
+  color: rgb(0, 0, 0);
+}
+
+.inValue input:focus::placeholder{
+  color: transparent;
+}
+
+.todo{
+  width: 600px;
+  background-color: rgb(255, 228, 196);
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 20px;
+}
+
+.task{
+  text-align: center;
+  border-top: 2px solid rgb(0, 0, 0);
+  padding-top: 15px;
+  margin-bottom: 15px;
+}
+
+
