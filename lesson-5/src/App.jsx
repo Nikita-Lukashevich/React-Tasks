@@ -4,14 +4,16 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Users from "./pages/Users";
 import User from "./pages/User";
-
+import { useState } from "react";
+import { ThemeContext } from "./context/ThemeContext/ThemeContext";
 import "./App.css";
 
 function App() {
-
+const[theme, setTheme] = useState('light')
 
   return (
-    <div className="full">
+    <ThemeContext.Provider value={{theme, setTheme}}>
+      <div className="full" id={theme}>
       <Routes>
         <Route path="/" element={<Layout/>}>
           <Route index element={<Home title = 'Главная страница'/>}/>
@@ -21,6 +23,7 @@ function App() {
         </Route>
       </Routes>
     </div>
+    </ThemeContext.Provider>
   );
 }
 

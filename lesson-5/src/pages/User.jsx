@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const User = () =>{
     let { id } = useParams();
+    console.log(id)
 
     const [user, setUser] = useState([]);
 

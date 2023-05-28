@@ -1,7 +1,18 @@
 import CustomLink from '../CustomLink/CustomLink'
+import {CustomizedSwitches} from '../SwitchTheme/Switch'
+import { ThemeContext } from "../../context/ThemeContext/ThemeContext";
+import { useContext} from 'react';
 import './Header.css'
 
+
 const Header = () =>{
+    const {theme, setTheme} = useContext(ThemeContext)
+    console.log("theme: ", theme);
+
+    const changeTheme = () => {
+        setTheme(theme === "light" ? "dark" : "light");
+    };
+
     return(
      <header>
         <nav>
@@ -17,6 +28,9 @@ const Header = () =>{
                 </li>
             </ul>
         </nav>
+        <div>
+            <CustomizedSwitches changeTheme={changeTheme} />
+        </div>
      </header>
     )
 } 
