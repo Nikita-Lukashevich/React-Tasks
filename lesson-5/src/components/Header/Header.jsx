@@ -7,7 +7,6 @@ import './Header.css'
 
 const Header = () =>{
     const {theme, setTheme} = useContext(ThemeContext)
-    console.log("theme: ", theme);
 
     const changeTheme = () => {
         setTheme(theme === "light" ? "dark" : "light");
