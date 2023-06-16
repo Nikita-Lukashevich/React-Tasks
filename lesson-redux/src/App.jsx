@@ -1,7 +1,9 @@
-import './App.css'
+import axios from "axios"
 import {useDispatch, useSelector} from 'react-redux'
 import { useState } from 'react'
 import { DEL_POST, ADD_POST } from './store/postReducer'
+import { getAllPosts } from './store/postReducer'
+import './App.css'
 
 function App() {
  const dispatch = useDispatch()
@@ -30,11 +32,19 @@ setInputAddPost("");
   });
 };
 
+const getPost = () => {
+  return function(dispatch) {
+    axios.get('https://jsonplaceholder.typicode.com/posts')
+      .then(response => dispatch(getAllPosts(response.data)))
+  }
+}
+
   return(
   <>
     <div className='inputPost'>
       <input onChange={(event) => setInputAddPost(event.target.value)} value={inputaddPost} placeholder='Введите текст' />
       <button onClick={addPost}>Добавить пост</button>
+      <button className='get-button' onClick={() => dispatch(getPost())}>Получить посты</button>
     </div>
     <div className="post">
     {posts.map(post => (

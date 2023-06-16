@@ -3,13 +3,13 @@ export const DEL_POST = "DEL_POST"
 export const ADD_POST = "ADD_POST"
 
 const initialState = {
-    posts: [{id: 1, title: 'Hello'},{id: 2, title: 'Test'},{id: 3, title: 'Text'}],
+    posts: [],
 };
 
 const postsReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_POSTS:
-            return { ...state, posts: action.payload};
+            return { ...state, posts: [...state.posts, ...action.payload]};
         case ADD_POST:
             return { ...state, posts: action.payload};
         case DEL_POST:
@@ -19,7 +19,7 @@ const postsReducer = (state = initialState, action) => {
     }
 };
 
-
+export const getAllPosts = (payload) => ({type: GET_POSTS, payload})
 
 
 export default postsReducer
