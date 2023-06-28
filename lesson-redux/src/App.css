@@ -1,0 +1,21 @@
+.inputPost{
+    margin: 10px;
+}
+
+.inputPost input{
+    margin-right: 10px;
+}
+
+.post-title{
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 20px;
+    margin: 5px;
+    padding: 10px;
+}
+
+.get-button{
+    margin-left: 10px;
+}
